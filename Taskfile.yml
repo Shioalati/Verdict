@@ -1,0 +1,11 @@
+version: '3'
+
+vars:
+  APP_NAME: vec
+  MAIN_PATH: ./main.go
+  OUT_PATH: ./
+
+tasks:
+  build:
+    cmds:       
+      - go build -o {{.OUT_PATH}}{{.APP_NAME}}{{exeExt}} {{.MAIN_PATH}}
