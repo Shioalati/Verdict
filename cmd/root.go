@@ -4,10 +4,11 @@ import (
 	"encoding/hex"
 	"fmt"
 	"os"
-	"verdict/internal/domain/root"
-	"verdict/internal/infrastructure/file"
-	"verdict/internal/infrastructure/hash"
 
+	"github.com/Shioalati/Verdict/internal/infrastructure/file"
+
+	"github.com/Shioalati/Verdict/internal/domain/root"
+	"github.com/Shioalati/Verdict/internal/infrastructure/hash"
 	"github.com/spf13/cobra"
 )
 

@@ -1,4 +1,4 @@
-module verdict
+module github.com/Shioalati/Verdict
 
 go 1.27.2
 

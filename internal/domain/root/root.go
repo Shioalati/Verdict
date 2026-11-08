@@ -1,8 +1,6 @@
 package root
 
-import (
-	"verdict/internal/domain/hash"
-)
+import "github.com/Shioalati/Verdict/internal/domain/hash"
 
 func Handle(l File, h hash.Hasher) (b []byte, err error) {
 	isExist, err := l.IsExist(Path)

@@ -1,8 +1,7 @@
 package cmd
 
 import (
-	"verdict/internal/domain/snapshot"
-
+	"github.com/Shioalati/Verdict/internal/domain/snapshot"
 	"github.com/spf13/cobra"
 )
 

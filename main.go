@@ -1,6 +1,6 @@
 package main
 
-import "verdict/cmd"
+import "github.com/Shioalati/Verdict/cmd"
 
 func main() {
 	cmd.Execute()

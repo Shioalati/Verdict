@@ -1,10 +1,9 @@
 package cmd
 
 import (
-	"verdict/internal/domain/initialize"
+	"github.com/Shioalati/Verdict/internal/infrastructure/file"
 
-	"verdict/internal/infrastructure/file"
-
+	"github.com/Shioalati/Verdict/internal/domain/initialize"
 	"github.com/spf13/cobra"
 )
 

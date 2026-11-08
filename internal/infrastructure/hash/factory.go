@@ -2,7 +2,8 @@ package hash
 
 import (
 	"fmt"
-	"verdict/internal/domain/hash"
+
+	"github.com/Shioalati/Verdict/internal/domain/hash"
 )
 
 var factories = make(map[string]func() hash.Hasher)

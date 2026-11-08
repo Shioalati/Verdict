@@ -3,7 +3,8 @@ package hash
 import (
 	"crypto/sha256"
 	"io"
-	"verdict/internal/domain/hash"
+
+	"github.com/Shioalati/Verdict/internal/domain/hash"
 )
 
 func init() {
