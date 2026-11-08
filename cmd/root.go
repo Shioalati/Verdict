@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"encoding/hex"
 	"fmt"
 	"os"
 
@@ -14,6 +13,7 @@ import (
 
 func init() {
 	rootCmd.Flags().StringVarP(&root.Algo, "algo", "a", "sha256", "algorithm")
+	rootCmd.Flags().BoolVarP(&root.List, "list", "l", false, "list per-file hashes for directories")
 }
 
 var rootCmd = &cobra.Command{
@@ -36,7 +36,7 @@ var rootCmd = &cobra.Command{
 			return err
 		}
 
-		fmt.Println(hex.EncodeToString(r))
+		fmt.Println(string(r))
 
 		return nil
 	},

@@ -3,7 +3,9 @@ package file
 import (
 	"fmt"
 	"io"
+	"io/fs"
 	"os"
+	"path/filepath"
 )
 
 type LocalStorage struct{}
@@ -30,12 +32,8 @@ func (l LocalStorage) Save(path string, r io.Reader) (err error) {
 	return nil
 }
 
-func (l LocalStorage) Read(path string) (io.Reader, error) {
-	f, err := os.Open(path)
-	if err != nil {
-		return nil, err
-	}
-	return f, nil
+func (l LocalStorage) Read(path string) (io.ReadCloser, error) {
+	return os.Open(path)
 }
 
 func (l LocalStorage) IsExist(path string) (bool, error) {
@@ -52,4 +50,24 @@ func (l LocalStorage) IsDir(path string) (bool, error) {
 		return false, err
 	}
 	return info.IsDir(), nil
+}
+
+func (l LocalStorage) Walk(root string, fn func(path, relPath string, isDir bool) error) error {
+	return filepath.WalkDir(root, func(path string, d fs.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+
+		if d.Type()&os.ModeSymlink != 0 {
+			return nil
+		}
+
+		relPath, err := filepath.Rel(root, path)
+		if err != nil {
+			return err
+		}
+		relPath = filepath.ToSlash(relPath)
+
+		return fn(path, relPath, d.IsDir())
+	})
 }
