@@ -13,6 +13,18 @@
 
 - 简洁的交互体验
 
+## 安装
+```
+go install github.com/Shioalati/Verdict/cmd/vec@latest
+```
+或从 Releases 页面下载预编译二进制文件。
+
+## 基础用法
+```
+vec ./example.txt
+```
+校验指定文件或目录的哈希值。
+
 ## 配置脚本
 
 ```
