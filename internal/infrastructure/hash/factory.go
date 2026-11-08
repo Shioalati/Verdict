@@ -18,8 +18,5 @@ func New(name string) (hash.Hasher, error) {
 		return nil, fmt.Errorf("unknown hash algorithm: %s", name)
 	}
 
-	if name == "" {
-		return factories["sha256"](), nil
-	}
 	return f(), nil
 }

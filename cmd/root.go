@@ -13,7 +13,7 @@ import (
 )
 
 func init() {
-	rootCmd.Flags().StringVarP(&root.Algo, "algo", "a", "", "algorithm")
+	rootCmd.Flags().StringVarP(&root.Algo, "algo", "a", "sha256", "algorithm")
 }
 
 var rootCmd = &cobra.Command{
